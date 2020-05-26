@@ -39,11 +39,13 @@ function getData(req,res){
 
 // Then, add a POST route that adds incoming data to projectData.
 app.post('/data', function(req, res) {
+  // res.send('Test the POST route');
 	const newData = {
 		temperature: req.body.temperature,
 		date: req.body.date,
 		userResponse: req.body.userResponse
 	};
 	projectData = newData;
-	res.send(newData);
+	res.send(projectData);
+  console.log(projectData);
 });
