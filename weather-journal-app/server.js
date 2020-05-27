@@ -31,14 +31,14 @@ const server = app.listen(port, listening);
   };
 
 // Add a GET route that returns the projectData object in your server code
-app.get('', getData);
+app.get('/all', getData);
 function getData(req,res){
     res.send(projectData);
     console.log(projectData);
 };
 
 // Then, add a POST route that adds incoming data to projectData.
-app.post('/data', function(req, res) {
+app.post('/addData', function(req, res) {
   // res.send('Test the POST route');
 	const newData = {
 		temperature: req.body.temperature,
